@@ -1,12 +1,12 @@
+## 🇺🇸 English
+
 # Star Wars Universe Explorer
 
 Interactive Star Wars catalog featuring characters, planets, and starships.
 
-Live Demo:  https://SEUUSER.github.io/NOME-REPO/](https://tamicoding.github.io/starwars-universe/
+Live Demo: https://tamicoding.github.io/starwars-universe/
 
 ---
-
-## 🇺🇸 English
 
 ### About the Project
 
