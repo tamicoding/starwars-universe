@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naves Star Wars</title>
+    <link rel="stylesheet" href="style-starships.css">
+</head>
+<body>
+    <header>
+        <a href="./index.html" onclick="localStorage.removeItem('charactersPage');localStorage.removeItem('planetsPage');localStorage.removeItem('starshipsPage');">
+            <div class="logo">
+                <img src="./assets/star-wars-logo.png" alt="Star Wars Logo" class="logo-img">
+                <span class="logo-text">Naves</span>
+            </div>
+        </a>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link" onclick="localStorage.removeItem('charactersPage')">Personagens</a>
+            <a href="planets.html" class="nav-link" onclick="localStorage.removeItem('planetsPage')">Planetas</a>
+            <a href="starships.html" class="nav-link" onclick="localStorage.removeItem('starshipsPage')">Naves</a>
+        </nav>
+        <div class="social-media">
+            <a href="https://github.com/tamicoding" target="_blank">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/tamirisfreis/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <h2>Descubra todas as naves de Star Wars em um so lugar</h2>
+
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-bar" placeholder="Pesquisar nave..." />
+        </div>
+
+        <div id="main-content" class="main-content">
+           
+        </div>
+
+        <div id="modal" class="modal" onclick="hideModal()">
+            <div id="modal-content" class="modal-content">
+               
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button id="back-button">Anterior</button>
+            <button id="next-button">Próxima</button>
+        </div>
+    </div>
+
+    <footer>
+        <span class="footer-logo">Star Wars Naves</span>
+        <span class="copyright">Desenvolvido por © Tamiris Reis</span>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a747b09475.js" crossorigin="anonymous"></script>
+    <script src="starships-script.js"></script>
+</body>
+</html>

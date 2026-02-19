@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#1a1a1a"/>
+  <circle cx="150" cy="150" r="80" fill="none" stroke="#FFD700" stroke-width="3"/>
+  <text x="150" y="155" font-family="Arial, sans-serif" font-size="18" fill="#FFD700" text-anchor="middle">Sem Imagem</text>
+</svg>
