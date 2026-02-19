@@ -107,7 +107,7 @@ function displayStarships(starships) {
     card.appendChild(starshipNameBG);
 
     card.onclick = () => {
-      displayStarshipModal(starship);
+      displayStarshipModal(starship, starshipIndex);
     };
     mainContent.appendChild(card);
   });
@@ -135,7 +135,7 @@ function setStarshipImage(card, starship, starshipIndex) {
   img.src = imagePath;
 }
 
-function displayStarshipModal(starship) {
+function displayStarshipModal(starship, starshipIndex) {
   const modal = document.getElementById("modal");
   modal.style.visibility = "visible";
   const modalContent = document.getElementById("modal-content");
@@ -144,9 +144,8 @@ function displayStarshipModal(starship) {
   const starshipImage = document.createElement("div");
   starshipImage.className = "starship-image";
   
-  // Extrair o ID da nave da URL
-  const starshipId = starship.url.replace(/\D/g, '');
-  const imagePath = `./assets/naves/${starshipId}.webp`;
+  // Usar o mesmo índice que o card usa
+  const imagePath = `./assets/naves/${starshipIndex}.webp`;
   
   const img = new Image();
   img.onload = () => {

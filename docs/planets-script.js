@@ -107,7 +107,7 @@ function displayPlanets(planets) {
     card.appendChild(planetNameBG);
 
     card.onclick = () => {
-      displayPlanetModal(planet);
+      displayPlanetModal(planet, planetIndex);
     };
     mainContent.appendChild(card);
   });
@@ -135,7 +135,7 @@ function setPlanetImage(card, planet, planetIndex) {
   img.src = imagePath;
 }
 
-function displayPlanetModal(planet) {
+function displayPlanetModal(planet, planetIndex) {
   const modal = document.getElementById("modal");
   modal.style.visibility = "visible";
   const modalContent = document.getElementById("modal-content");
@@ -144,9 +144,8 @@ function displayPlanetModal(planet) {
   const planetImage = document.createElement("div");
   planetImage.className = "planet-image";
   
-  // Extrair o ID do planeta da URL
-  const planetId = planet.url.replace(/\D/g, '');
-  const imagePath = `./assets/planetas/${planetId}.webp`;
+  // Usar o mesmo índice que o card usa
+  const imagePath = `./assets/planetas/${planetIndex}.webp`;
   
   const img = new Image();
   img.onload = () => {
