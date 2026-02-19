@@ -143,7 +143,20 @@ function displayPlanetModal(planet) {
 
   const planetImage = document.createElement("div");
   planetImage.className = "planet-image";
-  planetImage.style.backgroundImage = `url('https://via.placeholder.com/300x300?text=${planet.name}')`;
+  
+  // Extrair o ID do planeta da URL
+  const planetId = planet.url.replace(/\D/g, '');
+  const imagePath = `./assets/planetas/${planetId}.webp`;
+  
+  const img = new Image();
+  img.onload = () => {
+    planetImage.style.backgroundImage = `url('${imagePath}')`;
+  };
+  img.onerror = () => {
+    planetImage.style.backgroundColor = '#f0f0f0';
+    planetImage.style.backgroundImage = `url('https://via.placeholder.com/300x300?text=${planet.name}')`;
+  };
+  img.src = imagePath;
 
   const name = createDetailElement("Nome", planet.name);
   const climate = createDetailElement("Clima", planet.climate);

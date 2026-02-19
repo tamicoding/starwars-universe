@@ -143,7 +143,20 @@ function displayStarshipModal(starship) {
 
   const starshipImage = document.createElement("div");
   starshipImage.className = "starship-image";
-  setStarshipImage(starshipImage, starship);
+  
+  // Extrair o ID da nave da URL
+  const starshipId = starship.url.replace(/\D/g, '');
+  const imagePath = `./assets/naves/${starshipId}.webp`;
+  
+  const img = new Image();
+  img.onload = () => {
+    starshipImage.style.backgroundImage = `url('${imagePath}')`;
+  };
+  img.onerror = () => {
+    starshipImage.style.backgroundColor = '#f0f0f0';
+    starshipImage.style.backgroundImage = `url('https://via.placeholder.com/300x300?text=${starship.name}')`;
+  };
+  img.src = imagePath;
 
   const name = createDetailElement("Nome", starship.name);
   const model = createDetailElement("Modelo", starship.model);
