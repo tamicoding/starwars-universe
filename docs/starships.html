@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naves Star Wars</title>
     <link rel="stylesheet" href="style-starships.css">
+    <script defer src="resource-page.js"></script>
+    <script defer src="starships-script.js"></script>
 </head>
 <body>
     <header>
-        <a href="./index.html" onclick="localStorage.removeItem('charactersPage');localStorage.removeItem('planetsPage');localStorage.removeItem('starshipsPage');">
+        <a href="./index.html" onclick="sessionStorage.removeItem('charactersPage');sessionStorage.removeItem('planetsPage');sessionStorage.removeItem('starshipsPage');">
             <div class="logo">
                 <img src="./assets/star-wars-logo.png" alt="Star Wars Logo" class="logo-img">
                 <span class="logo-text">Naves</span>
             </div>
         </a>
         <nav class="nav-links">
-            <a href="index.html" class="nav-link" onclick="localStorage.removeItem('charactersPage')">Personagens</a>
-            <a href="planets.html" class="nav-link" onclick="localStorage.removeItem('planetsPage')">Planetas</a>
-            <a href="starships.html" class="nav-link" onclick="localStorage.removeItem('starshipsPage')">Naves</a>
+            <a href="index.html" class="nav-link" onclick="sessionStorage.removeItem('charactersPage')">Personagens</a>
+            <a href="planets.html" class="nav-link" onclick="sessionStorage.removeItem('planetsPage')">Planetas</a>
+            <a href="starships.html" class="nav-link" onclick="sessionStorage.removeItem('starshipsPage')">Naves</a>
         </nav>
         <div class="social-media">
-            <a href="https://github.com/tamicoding" target="_blank">
+            <a href="https://github.com/tamicoding" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Tamiris Reis">
         <i class="fa-brands fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/tamirisfreis/" target="_blank">
+      <a href="https://www.linkedin.com/in/tamirisfreis/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Tamiris Reis">
         <i class="fa-brands fa-linkedin-in"></i>
       </a>
         </div>
@@ -40,7 +42,7 @@
            
         </div>
 
-        <div id="modal" class="modal" onclick="hideModal()">
+        <div id="modal" class="modal" onclick="hideModal(event)" aria-hidden="true">
             <div id="modal-content" class="modal-content">
                
             </div>
@@ -58,6 +60,5 @@
     </footer>
 
     <script src="https://kit.fontawesome.com/a747b09475.js" crossorigin="anonymous"></script>
-    <script src="starships-script.js"></script>
 </body>
 </html>

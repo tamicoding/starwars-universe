@@ -11,6 +11,9 @@
 body {
   background-image: url('./assets/universo-bg.jpg');
   background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 a {
@@ -18,27 +21,29 @@ a {
 }
 
 header {
-  height: 70px;
+  min-height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
+  padding: 10px 24px;
 }
 
 .nav-links {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-link {
-    font-family: 'Star Wars', sans-serif;
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: gold;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  font-family: 'Star Wars', sans-serif;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: gold;
 }
 
 .logo {
@@ -60,11 +65,11 @@ header {
 }
 
 .social-media {
-  width: 70px;
+  min-width: 70px;
   display: flex;
   justify-content: space-between;
   gap: 15px;
-  padding-right: 50px;
+  padding-right: 20px;
 }
 
 i {
@@ -80,6 +85,8 @@ i:hover {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -92,11 +99,12 @@ h2 {
 
 .main-content {
   width: 100%;
+  max-width: 1320px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 20px;
-  row-gap: 10px;
+  row-gap: 18px;
   padding: 0 20px;
 }
 
@@ -117,6 +125,68 @@ h2 {
   transform: scale(1.02);
 }
 
+.cards:focus-visible {
+  outline: 3px solid gold;
+  outline-offset: 4px;
+}
+
+.skeleton-card {
+  background: linear-gradient(
+    110deg,
+    rgba(30, 30, 30, 0.95) 8%,
+    rgba(58, 58, 58, 0.95) 18%,
+    rgba(30, 30, 30, 0.95) 33%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+  cursor: progress;
+}
+
+.skeleton-name-bg {
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.skeleton-line {
+  width: 75%;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 215, 0, 0.55);
+}
+
+.error-state {
+  width: min(680px, 92%);
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+  padding: 28px 24px;
+  border: 1px solid rgba(255, 215, 0, 0.5);
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.72);
+  text-align: center;
+}
+
+.error-state-title {
+  font-family: 'Star Wars', sans-serif;
+  color: gold;
+  font-size: 1.1rem;
+}
+
+.error-state-message {
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+.error-state-button {
+  width: auto;
+  min-width: 150px;
+  height: 38px;
+  padding: 0 18px;
+}
+
 .planet-name-bg {
   width: 100%;
   height: 30px;
@@ -128,22 +198,32 @@ h2 {
 }
 
 .planet-name {
-  font-family: 'Star Wars', sans-serif;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
   color: gold;
-  font-size: 1rem;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.search-highlight {
+  background: rgba(255, 215, 0, 0.22);
+  color: #fff;
+  padding: 0 3px;
+  border-radius: 4px;
 }
 
 .buttons {
-  width: 60%;
+  width: min(560px, 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
   margin-top: 50px;
 }
 
 button {
-  width: 70px;
-  height: 25px;
+  min-width: 96px;
+  height: 36px;
   background-color: gold;
   color: #000;
   font-weight: 700;
@@ -189,21 +269,46 @@ footer {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
+  left: 0;
+  padding: 16px;
 }
 
 .modal-content {
-  width: 25vw;
-  height: 70vh;
+  width: min(420px, 92vw);
+  min-height: 70vh;
+  max-height: 86vh;
   background-color: #0d0d0d;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
-  padding: 30px 10px;
+  row-gap: 12px;
+  padding: 24px 18px;
   align-items: center;
+  position: relative;
+  overflow-y: auto;
+}
+
+.modal-content:focus {
+  outline: 2px solid gold;
+  outline-offset: 3px;
+}
+
+.modal-close {
+  width: auto;
+  min-width: 96px;
+  height: 34px;
+  padding: 0 14px;
+  align-self: flex-end;
+}
+
+.modal-close:focus-visible {
+  outline: 3px solid gold;
+  outline-offset: 3px;
 }
 
 .planet-image {
@@ -212,73 +317,22 @@ footer {
   border-radius: 50%;
   background-position: 50% 10%;
   background-size: cover;
+  border: 3px solid rgba(255, 215, 0, 0.75);
+  box-shadow: 0 0 24px rgba(255, 215, 0, 0.18);
+  margin-bottom: 8px;
 }
 
 .planet-details {
-  font-family: 'Star Wars', sans-serif;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
   font-size: 1rem;
-  font-weight: lighter;
+  font-weight: 600;
+  line-height: 1.4;
   color: gold;
-}
-
-@media (max-width: 1024px) {
-  .main-container {
-    padding: 20px;
-  }
-  
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  .modal-content {
-    width: 30vw;
-  }
-}
-
-@media (max-width: 834px) {
-  h2 {
-    text-align: center;
-  }
-
-  .modal-content {
-    width: 50vw;
-    height: 50vh;
-  }
-}
-
-@media (max-width: 414px) {
-  h2 {
-    font-size: 1.1rem;
-  }
-
-  .logo {
-    width: 200px;
-  }
-  
-  .logo-img {
-    width: 35%;
-  }
-  
-  .logo-text {
-    font-size: 0.9rem;
-  }
-  
-  .social-media {
-    width: 90px;
-  }
-
-  .modal-content {
-    width: 95vw;
-    height: 70vh;
-  }
-
-  .footer-logo {
-    font-size: 1.1rem;
-  }
-
-  .search-bar {
-    width: 90%;
-  }
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255, 215, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.14);
 }
 
 .search-container {
@@ -288,7 +342,7 @@ footer {
 }
 
 .search-bar {
-  width: 400px;
+  width: min(400px, 90vw);
   padding: 12px 20px;
   font-size: 1rem;
   border: 2px solid gold;
@@ -301,7 +355,7 @@ footer {
 
 .search-bar:focus {
   outline: none;
-  border-color: #FFD700;
+  border-color: #ffd700;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -310,26 +364,123 @@ footer {
   color: rgba(255, 255, 255, 0.6);
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        padding-bottom: 15px;
-    }
-  
-    .nav-links {
-        order: 3;
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-      }
-    }
-    
-    .main-container {
-      padding-top: 30px;
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    padding: 20px;
   }
 
   h2 {
-    margin-bottom: 30px; 
+    font-size: 1.4rem;
   }
+
+  .modal-content {
+    width: min(520px, 92vw);
+  }
+}
+
+@media (max-width: 834px) {
+  h2 {
+    text-align: center;
+  }
+
+  .modal-content {
+    min-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 14px 15px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .main-container {
+    padding-top: 30px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 414px) {
+  h2 {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+
+  .logo {
+    width: 170px;
+  }
+
+  .logo-img {
+    width: 32%;
+  }
+
+  .logo-text {
+    font-size: 0.8rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .social-media {
+    width: 76px;
+    padding-right: 0;
+  }
+
+  .modal-content {
+    width: 95vw;
+    min-height: 70vh;
+  }
+
+  .footer-logo {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .main-content {
+    padding: 0 8px;
+  }
+
+  .cards {
+    width: min(210px, 92vw);
+    height: 390px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    margin-top: 36px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

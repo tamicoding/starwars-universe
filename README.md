@@ -1,132 +1,150 @@
-## 🇺🇸 English
-
 # Star Wars Universe Explorer
 
-Interactive Star Wars catalog featuring characters, planets, and starships.
+Aplicacao web em JavaScript puro para explorar personagens, planetas e naves do universo Star Wars com busca, paginacao, modal de detalhes e fallback de API.
 
 Live Demo: https://tamicoding.github.io/starwars-universe/
 
----
-
-### About the Project
-
-Star Wars Universe Explorer is a static web application inspired by the Star Wars universe.  
-The project allows users to browse characters, planets, and starships through an interactive card-based interface.
-
-Data is fetched from the SWAPI (Star Wars API), with fallback handling implemented to improve reliability.
-
----
-
-### Features
-
-- Characters listing  
-- Planets listing  
-- Starships listing  
-- Real-time search and filtering  
-- Pagination  
-- Local image assets  
-- Dynamic modal details  
-- API fallback strategy  
-- Responsive layout  
-
----
-
-### Technologies Used
-
-- HTML5  
-- CSS3  
-- Vanilla JavaScript  
-- SWAPI (Star Wars API)  
-- LocalStorage  
-
----
-
-### Key Concepts Practiced
-
-- DOM manipulation  
-- Asynchronous JavaScript (fetch / async-await)  
-- State persistence with LocalStorage  
-- Conditional rendering  
-- API error handling  
-- Fallback request strategy  
-
----
-
-### How to Run Locally
-
-git clone https://github.com/SEUUSER/NOME-REPO.git
-
 ## PT-BR
 
-Sobre o Projeto
+### Visao geral
 
-Star Wars Universe Explorer é uma aplicação web estática inspirada no universo Star Wars.
-O projeto permite navegar por personagens, planetas e naves através de uma interface interativa baseada em cards.
+Este projeto foi desenvolvido com foco em JavaScript puro, manipulacao de DOM e consumo de API sem uso de framework.
 
-Os dados são consumidos da SWAPI (Star Wars API), com tratamento de fallback implementado para maior confiabilidade.
+O principal diferencial deste projeto foi a sua recuperacao tecnica: em diferentes momentos, a API principal ficou instavel e a fonte externa de imagens deixou de ser confiavel. Em vez de abandonar o projeto, eu implementei fallback entre endpoints compativeis, reorganizei os assets localmente e refatorei a base para manter a aplicacao funcional e mais resiliente.
 
-Funcionalidades
+### Destaques para portfolio
 
-Listagem de personagens
+- JavaScript puro com `fetch` e `async/await`
+- Busca global para personagens, planetas e naves
+- Estrategia de fallback para instabilidade da API
+- Assets locais para reduzir dependencia externa
+- Refatoracao de codigo repetido em uma camada compartilhada
+- Estados de loading, erro e busca sem resultado
+- Responsividade e melhorias de acessibilidade no modal
 
-Listagem de planetas
+### Galeria
 
-Listagem de naves
+![Personagens](docs/assets/print1.png)
+![Planetas](docs/assets/print2.png)
+![Naves](docs/assets/print3.png)
+![Busca](docs/assets/print4.png)
 
-Busca e filtro em tempo real
+### Principais funcionalidades
 
-Paginação
+- Listagem de personagens, planetas e naves
+- Busca em tempo real
+- Paginacao
+- Modal com detalhes de cada item
+- Imagens locais por slug
+- Persistencia por sessao com `sessionStorage`
 
-Imagens locais
+### Desafios enfrentados
 
-Modais dinâmicos
+#### 1. Instabilidade da API
 
-Estratégia de fallback da API
+A API principal nem sempre respondia de forma confiavel. Para evitar que o projeto ficasse indisponivel, foi implementada uma estrategia de fallback entre diferentes endpoints compativeis com a SWAPI.
 
-Layout responsivo
+#### 2. Dependencia de imagens externas
 
-Tecnologias Utilizadas
+O projeto dependia de uma fonte externa de imagens que deixou de funcionar bem. A solucao foi recuperar os assets manualmente, salvar tudo localmente e adaptar o carregamento para um padrao por nome, deixando o projeto independente da ordem ou do ID da API.
 
-HTML5
+### Decisoes tecnicas
 
-CSS3
+- Centralizacao da logica compartilhada entre personagens, planetas e naves
+- Uso de fallback de API para aumentar resiliencia
+- Migracao das imagens para assets locais
+- Busca desacoplada da ordem numerica dos recursos
+- Uso de `sessionStorage` para manter estado apenas durante a sessao
 
-JavaScript (Vanilla)
+### Tecnologias
 
-SWAPI (Star Wars API)
+- HTML5
+- CSS3
+- JavaScript puro
+- SWAPI
+- sessionStorage
 
-LocalStorage
+### Como executar localmente
 
-Conceitos Praticados
+```bash
+git clone https://github.com/tamicoding/star-wars-characters.git
+cd star-wars-characters
+```
 
-Manipulação de DOM
+Abra `docs/index.html` no navegador.
 
-JavaScript assíncrono (fetch / async-await)
+## English
 
-Persistência de estado com LocalStorage
+### Overview
 
-Renderização condicional
+This project was built with a focus on vanilla JavaScript, DOM manipulation, and API consumption without frameworks.
 
-Tratamento de erros de API
+Its main strength is not only the interface, but also the technical recovery behind it: at different moments, the main API became unstable and the external image source stopped being reliable. Instead of discarding the project, I implemented API fallback logic, moved assets to local files, and refactored the shared front-end layer to keep the application stable and maintainable.
 
-Estratégia de fallback
+### Portfolio highlights
 
-Como Executar Localmente
-git clone https://github.com/SEUUSER/NOME-REPO.git
+- Vanilla JavaScript with `fetch` and `async/await`
+- Global search for characters, planets, and starships
+- API fallback strategy for unstable endpoints
+- Local image assets to reduce external dependency
+- Refactoring repeated logic into a shared layer
+- Loading, error, and empty-search states
+- Responsive layout and modal accessibility improvements
 
+### Gallery
 
-Abra o arquivo index.html no navegador.
+![Characters](docs/assets/print1.png)
+![Planets](docs/assets/print2.png)
+![Starships](docs/assets/print3.png)
+![Search](docs/assets/print4.png)
 
-Author / Autora
+### Main features
+
+- Characters, planets, and starships listing
+- Real-time search
+- Pagination
+- Detail modal for each item
+- Local slug-based image assets
+- Session-based state persistence with `sessionStorage`
+
+### Challenges solved
+
+#### 1. API instability
+
+The main API was not always reliable. To avoid downtime, I implemented a fallback strategy across compatible SWAPI endpoints.
+
+#### 2. External image dependency
+
+The project originally depended on an external image source that became unreliable. I solved that by recovering the assets manually, storing them locally, and updating the project to resolve images by name instead of relying on API order or raw IDs.
+
+### Technical decisions
+
+- Shared logic layer for characters, planets, and starships
+- API fallback strategy for better resilience
+- Migration to local assets
+- Search decoupled from API ordering
+- `sessionStorage` used for session-only persistence
+
+### Tech stack
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- SWAPI
+- sessionStorage
+
+### How to run locally
+
+```bash
+git clone https://github.com/tamicoding/star-wars-characters.git
+cd star-wars-characters
+```
+
+Open `docs/index.html` in your browser.
+
+## Author
 
 Tamiris Reis
 
-GitHub: https://github.com/tamicoding/
-
-LinkedIn: https://linkedin.com/in/tamirisfreis/
-
-Notes / Observações
-
-This is a study project built for learning and portfolio purposes.
-Este é um projeto de estudo desenvolvido para fins de aprendizado e portfólio.
-
+- GitHub: https://github.com/tamicoding
+- LinkedIn: https://www.linkedin.com/in/tamirisfreis/
