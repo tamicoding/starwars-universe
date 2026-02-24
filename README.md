@@ -1,12 +1,8 @@
-## 🇺🇸 English
+🇺🇸 English
 
 # Star Wars Universe Explorer
 
-Interactive Star Wars catalog featuring characters, planets, and starships.
-
-Live Demo: https://tamicoding.github.io/starwars-universe/
-
----
+Interactive Star Wars catalog featuring characters, planets, and starship.
 
 ### About the Project
 
@@ -15,7 +11,10 @@ The project allows users to browse characters, planets, and starships through an
 
 Data is fetched from the SWAPI (Star Wars API), with fallback handling implemented to improve reliability.
 
----
+## Live Demo: 
+
+https://tamicoding.github.io/starwars-universe/
+
 
 ### Features
 
@@ -29,8 +28,6 @@ Data is fetched from the SWAPI (Star Wars API), with fallback handling implement
 - API fallback strategy  
 - Responsive layout  
 
----
-
 ### Technologies Used
 
 - HTML5  
@@ -38,8 +35,6 @@ Data is fetched from the SWAPI (Star Wars API), with fallback handling implement
 - Vanilla JavaScript  
 - SWAPI (Star Wars API)  
 - LocalStorage  
-
----
 
 ### Key Concepts Practiced
 
@@ -50,22 +45,32 @@ Data is fetched from the SWAPI (Star Wars API), with fallback handling implement
 - API error handling  
 - Fallback request strategy  
 
----
-
 ### How to Run Locally
 
 git clone https://github.com/SEUUSER/NOME-REPO.git
 
-## PT-BR
+## Author: 
 
-Sobre o Projeto
+Tamiris Reis
+
+GitHub: https://github.com/tamicoding/
+
+LinkedIn: https://linkedin.com/in/tamirisfreis/
+
+## Notes:
+
+This is a study project built for learning and portfolio purposes.
+
+PT-BR
+
+## Sobre o Projeto
 
 Star Wars Universe Explorer é uma aplicação web estática inspirada no universo Star Wars.
 O projeto permite navegar por personagens, planetas e naves através de uma interface interativa baseada em cards.
 
 Os dados são consumidos da SWAPI (Star Wars API), com tratamento de fallback implementado para maior confiabilidade.
 
-Funcionalidades
+## Funcionalidades
 
 Listagem de personagens
 
@@ -85,7 +90,7 @@ Estratégia de fallback da API
 
 Layout responsivo
 
-Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 HTML5
 
@@ -97,7 +102,7 @@ SWAPI (Star Wars API)
 
 LocalStorage
 
-Conceitos Praticados
+## Conceitos Praticados
 
 Manipulação de DOM
 
@@ -111,13 +116,13 @@ Tratamento de erros de API
 
 Estratégia de fallback
 
-Como Executar Localmente
-git clone https://github.com/SEUUSER/NOME-REPO.git
+## Como Executar Localmente
 
+git clone https://github.com/SEUUSER/NOME-REPO.git
 
 Abra o arquivo index.html no navegador.
 
-Author / Autora
+## Autora: 
 
 Tamiris Reis
 
@@ -125,8 +130,7 @@ GitHub: https://github.com/tamicoding/
 
 LinkedIn: https://linkedin.com/in/tamirisfreis/
 
-Notes / Observações
+## Observações:
 
-This is a study project built for learning and portfolio purposes.
 Este é um projeto de estudo desenvolvido para fins de aprendizado e portfólio.
 
