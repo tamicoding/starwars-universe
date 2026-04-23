@@ -28,6 +28,7 @@ O principal diferencial deste projeto foi a sua recuperacao tecnica: em diferent
 ![Planetas](docs/assets/print2.png)
 ![Naves](docs/assets/print3.png)
 ![Busca](docs/assets/print4.png)
+![Versao mobile](<docs/assets/print 5.png>)
 
 ### Principais funcionalidades
 
@@ -97,6 +98,7 @@ Its main strength is not only the interface, but also the technical recovery beh
 ![Planets](docs/assets/print2.png)
 ![Starships](docs/assets/print3.png)
 ![Search](docs/assets/print4.png)
+![Mobile version](<docs/assets/print 5.png>)
 
 ### Main features
 
